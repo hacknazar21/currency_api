@@ -54,7 +54,7 @@ class CurrencyController {
                         currencies.push({
                             sell: privatePersons[privatePersonsKey].sell,
                             buy: privatePersons[privatePersonsKey].buy,
-                            currency: privatePersonsKey.replaceAll('/KZT', '')
+                            currency: privatePersonsKey.replace('/KZT', '')
                         })
                     }
                     currencies.map(currency => createCurrency({...currency, bank: bankName}))
