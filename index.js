@@ -1,6 +1,6 @@
 const express = require('express')
 const currencyRouter = require('./routes/currency.route')
-const PORT = process.env.PORT || 8000
+const PORT = 8000
 
 const app = express()
 const currencyController = require('./controller/currency.controller')

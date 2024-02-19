@@ -33,7 +33,7 @@ class CurrencyController {
         const currency = await db.query("SELECT * FROM currency where id=$1", [id])
         if(currency.rows[0])
             res.json(currency.rows[0])
-        else  res.sendStatus(404);
+        else res.sendStatus(404);
     }
     async updateCurrency({sell, buy, currency, bank}) {
         await db.query("UPDATE currency SET sell=$1, buy=$2 WHERE currency=$3 and bank=$4", [sell, buy, currency, bank])
