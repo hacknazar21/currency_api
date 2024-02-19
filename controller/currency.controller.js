@@ -1,6 +1,7 @@
 const db = require("../db");
 const rp = require('request-promise');
 const parse = require('cheerio');
+const fetch = require("node-fetch");
 
 const banks = [{
     name: 'halyk',
