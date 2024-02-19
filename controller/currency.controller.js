@@ -108,6 +108,13 @@ class CurrencyController {
                     const currenciesJusan = [];
                     for (const jsonJusanElement of jsonJusan) {
                         if(jsonJusanElement.exchangeType === "2"){
+                            if(jsonJusanElement.currencyFrom !== "USD" && jsonJusanElement.currencyFrom !== "RUB" && jsonJusanElement.currencyFrom !== "EUR")
+                                currenciesJusan.push({
+                                    sell: jsonJusanElement.saleSum,
+                                    buy: jsonJusanElement.buyingSum,
+                                    currency: jsonJusanElement.currencyFrom
+                                })
+                        } if(jsonJusanElement.exchangeType === "1"){
                             currenciesJusan.push({
                                 sell: jsonJusanElement.saleSum,
                                 buy: jsonJusanElement.buyingSum,
